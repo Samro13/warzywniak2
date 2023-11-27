@@ -46,4 +46,8 @@ class RestAPI {
         return httpClient.get("search.php?s=${name}")
     }
 
+    suspend fun drinki2(id: String): HttpResponse {
+        return httpClient.get("lookup.php?i=${id}")
+    }
+
 }

@@ -9,6 +9,8 @@ data class Drink(
     val strDrink: String,
     val strTags: String?,
     val strCategory: String,
+    val strInstructions: String?,
+    val strGlass: String?,
 )
 
 @Serializable

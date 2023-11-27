@@ -25,9 +25,9 @@ class TargViewModel: ViewModel() {
     val items = _items.asStateFlow()
     var drinks = _drinks.asStateFlow()
 
-    fun cos(){
-        val targ= Json.decodeFromString<Food>(test)
-        _items.value=targ.food.toMutableStateList()
+    fun cos() {
+        val targ = Json.decodeFromString<Food>(test)
+        _items.value = targ.food.toMutableStateList()
     }
 
     fun getDrinksBy(name: String) {
@@ -37,6 +37,18 @@ class TargViewModel: ViewModel() {
                 val drinks = response.body() as Drinks
                 _drinks.value = drinks.drinks.toMutableStateList()
                 Log.d("TEST", "$drinks")
+            }
+        }
+    }
+
+    fun drinki2(id: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = restApi.drinki2(id)
+            if (response.status.isSuccess()) {
+                val drinks = response.body() as Drinks
+
+                _drinks.value = drinks.drinks.toMutableStateList()
+                Log.d("TEST2", "$drinks")
             }
         }
     }

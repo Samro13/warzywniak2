@@ -47,11 +47,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             WarzywniakTheme {
                 val viewModel: TargViewModel = viewModel()
-                val items = viewModel.items.collectAsStateWithLifecycle()
                 val drinks = viewModel.drinks.collectAsStateWithLifecycle()
-                // A surface container using the 'background' color from the theme
+
                 LaunchedEffect(Unit) {
-                    viewModel.cos()
                     viewModel.getDrinksBy("")
                 }
                 Surface(
@@ -69,12 +67,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun sklep(list: SnapshotStateList<Drink>) {
-    val klikanie = remember {
-        mutableStateOf<Boolean>(false)
-    }
-    val opis = remember {
-        mutableStateOf<Drink?>(null)
-    }
+
 
 
 

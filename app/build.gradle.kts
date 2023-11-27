@@ -68,6 +68,8 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("io.ktor:ktor-client-android:2.3.0")
 
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+
     implementation("io.ktor:ktor-client-core:$ktorVersion")
     implementation("io.ktor:ktor-client-cio:$ktorVersion")
     implementation("io.ktor:ktor-client-logging:$ktorVersion")
